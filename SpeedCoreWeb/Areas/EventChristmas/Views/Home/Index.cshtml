@@ -1,0 +1,594 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta content="SpeedPOS" name="description">
+    <meta content="Spruko Technologies Private Limited" name="author">
+    <meta name="keywords" content="html admin template, bootstrap admin template premium, premium responsive admin template, admin dashboard template bootstrap, bootstrap simple admin template premium, web admin template, bootstrap admin template, premium admin template html5, best bootstrap admin template, premium admin panel template, admin template" />
+
+    <!--Bootstrap.min css-->
+    <link rel="stylesheet" href="~/Areas/EventChristmas/Assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Owl Theme css-->
+    <link href="~/Areas/EventChristmas/Assets/plugins/owl-carousel/owl.carousel.css" rel="stylesheet">
+
+    <!-- Dashboard css -->
+    <link id="link1" href="~/Areas/EventChristmas/Assets/css/style.css?n=123" rel="stylesheet" />
+
+    <!-- Horizontal-menu css -->
+    <link href="~/Areas/EventChristmas/Assets/plugins/horizontal-menu/dropdown-effects/fade-down.css" rel="stylesheet">
+    <link id="link2" href="~/Areas/EventChristmas/Assets/plugins/horizontal-menu/horizontalmenu.css" rel="stylesheet">
+
+    <!--Daterangepicker css-->
+    <link href="~/Areas/EventChristmas/Assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+
+    <!-- Rightsidebar css -->
+    <link id="link3" href="~/Areas/EventChristmas/Assets/plugins/sidebar/sidebar.css" rel="stylesheet">
+
+    <!-- Sidebar Accordions css -->
+    <link id="link5" href="~/Areas/EventChristmas/Assets/plugins/accordion1/css/easy-responsive-tabs.css" rel="stylesheet">
+
+    <!--Select2 css -->
+    <link id="link6" href="~/Areas/EventChristmas/assets/plugins/select2/select2.min.css" rel="stylesheet" />
+
+    <!---Font icons css-->
+    <link href="~/Areas/EventChristmas/Assets/plugins/iconfonts/plugin.css" rel="stylesheet" />
+    <link href="~/Areas/EventChristmas/Assets/plugins/iconfonts/icons.css" rel="stylesheet" />
+    <link href="~/Areas/EventChristmas/Assets/fonts/fonts/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Data table css -->
+    @*<link href="~/Areas/EventChristmas/Assets/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />*@
+    <link href="~/Areas/EventChristmas/Assets/plugins/datatable/responsivebootstrap4.min.css" rel="stylesheet" />
+
+    <!-- Data table css -->
+    @* <link href="~/Areas/EventChristmas/Assets/plugins/datatable/dataTables.bootstrap4.min.css" rel="stylesheet" />*@
+    <link href="~/Areas/EventChristmas/Assets/plugins/datatable/responsivebootstrap4.min.css" rel="stylesheet" />
+    <link href="~/Areas/EventChristmas/Assets/plugins/datatable/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Areas/EventChristmas/Assets/plugins/datatable/jquery.dataTables.min.css?n=4654564123132" rel="stylesheet" />
+    <link href="~/Areas/EventChristmas/Assets/plugins/datatable/dataTables.fixedColumns.min.css?n=12112021" rel="stylesheet" />
+    <link href="~/Areas/EventChristmas/Assets/plugins/datatable/dataTables.fixedHeader.min.css?n=12112021" rel="stylesheet" />
+    <!-- Forn-wizard css-->
+    <link href="~/Areas/EventChristmas/Assets/plugins/forn-wizard/css/forn-wizard.css" rel="stylesheet" />
+    <link href="~/Areas/EventChristmas/Assets/plugins/formwizard/smart_wizard.css" rel="stylesheet">
+    <link id="link4" href="~/Areas/EventChristmas/Assets/plugins/formwizard/smart_wizard_theme_dots.css" rel="stylesheet">
+
+    <!-- Time picker css-->
+    <link href="~/Areas/EventChristmas/Assets/plugins/time-picker/jquery.timepicker.css" rel="stylesheet" />
+
+    <!-- Date Picker css-->
+    <link href="~/Areas/EventChristmas/Assets/plugins/date-picker/spectrum.css" rel="stylesheet" />
+
+    <!-- Time picker css-->
+    <link href="~/Areas/EventChristmas/Assets/plugins/time-picker/jquery.timepicker.css" rel="stylesheet" />
+
+    <!-- Date Picker css-->
+    <link href="~/Areas/EventChristmas/Assets/plugins/date-picker/spectrum.css" rel="stylesheet" />
+
+    <!-- File Uploads css-->
+    <link href="~/Areas/EventChristmas/Assets/plugins/fileuploads/css/dropify.css" rel="stylesheet" type="text/css" />
+
+    <!--Mutipleselect css-->
+    <link rel="stylesheet" href="~/Areas/EventChristmas/Assets/plugins/multipleselect/multiple-select.css">
+    <!-- File Uploads css-->
+    <link href="~/Areas/EventChristmas/Assets/plugins/fileuploads/css/dropify.css" rel="stylesheet" type="text/css" />
+
+    <!--Mutipleselect css-->
+    <link rel="stylesheet" href="~/Areas/EventChristmas/Assets/plugins/multipleselect/multiple-select.css">
+
+    <!--Jquery UI css-->
+    <link rel="stylesheet" href="~/Areas/EventChristmas/Assets/plugins/jquery-ui2/jquery-ui.css">
+
+    <!--Col Reorder css-->
+    <link rel="stylesheet" href="~/Areas/EventChristmas/Assets/plugins/col-reorder/col-reorder.css">
+
+    <!--JExcel JSuites css-->
+    <link rel="stylesheet" href="~/Areas/EventChristmas/Assets/plugins/jexcel/jexcel.css">
+    <link rel="stylesheet" href="~/Areas/EventChristmas/Assets/plugins/jsuites/jsuites.css">
+    <style>
+        div.scrollable-table-wrapper {
+            height: 300px;
+            overflow: auto;
+            -ms-overflow-style: none; /* khai báo sử dụng Internet Explorer, Edge */
+            scrollbar-width: none;
+        }
+
+        .scrollable-table-wrapper thead tr th {
+            position: sticky;
+            top: -1px;
+            
+        }
+        div.scrollable-table-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="app sidebar-mini rtl">
+    <script src="~/Areas/EventChristmas/Assets/js/vendors/jquery-3.2.1.min.js"></script>
+    <!--Select2 js -->
+    <script src="~/Areas/EventChristmas/Assets/plugins/select2/select2.full.min.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/js/select2.js"></script>
+    <!--Global-Loader-->
+    <div id="global-loader">
+        <div class="sk-folding-cube" style="position: absolute;left: 0;right: 0;text-align: center;top: 45%;margin: 0 auto;"><div class="sk-cube1 sk-cube"></div><div class="sk-cube2 sk-cube"></div><div class="sk-cube4 sk-cube"></div><div class="sk-cube3 sk-cube"></div></div>
+    </div>
+
+    <div class="page profile-bg">
+        <div class="page-main">
+            <div class="container content-area">
+                <div class="side-app">
+                    <!-- row -->
+                    <div class="row pt-1">
+                        <div class="col-md-12">
+                            <div class="card card-profile  overflow-hidden">
+                                <div class="card-body profile-bg">
+                                    <h2 class="mt-3 text-yellow text-left">CHRISTMAS IN GLITTER</h2>
+                                    <p class="mb-2 text-yellow text-left" style="font-size:18px" id="member-name">Welcome (loading...) </p>
+                                    <p class="mb-2 text-yellow text-left" style="font-size:18px" id="member-title">Title: (loading...)</p>
+                                    <p class="mb-2 text-yellow text-left" style="font-size:18px" id="member-company">Company: (loading...)</p>
+                                    <p class="mb-2 text-yellow text-left" style="font-size:18px" id="member-btn">(loading...)</p>
+                                    <p class="mb-2 text-yellow text-left" style="font-size:18px">Your QR Code:</p>
+                                    <image id="qr-code"></image>
+                                    <h4 class=" text-yellow text-left pt-1" style="font-size:20px">Who are in join Speed POS Christmas Party:</h4>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <ul class="text-left">
+                                                <li class="">
+                                                    <h4 class="form-label text-yellow">Sector:</h4>
+                                                    <div class="custom-controls-stacked ml-3 mt-3" id="filter-sector">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-6">
+                                            <ul class="text-left">
+                                                <li class="">
+                                                    <h4 class="form-label text-yellow">Company:</h4>
+                                                    <div class="custom-controls-stacked ml-3 mt-3" id="filter-company">
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h4 class="mt-3 text-yellow text-left" style="font-size:18px">List of VIP:</h4>
+
+                                    </div>
+                                    <div class="table-responsive scrollable-table-wrapper">
+                                        <table class="table text-nowrap w-100" style="width:100%">
+                                            <thead style="overflow: visible;" class="text-yellow">
+                                            </thead>
+                                            <tbody id="data-member" class="text-yellow">
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="row border-top">
+                                        <h4 class="mt-3 text-yellow text-left" style="font-size:18px">Event Agenda:</h4>
+                                        <div class="col-12">
+                                            <ul class="text-left">
+                                                <li>
+                                                    <h4 class="text-left text-yellow"><i class="typcn typcn-chevron-right-outline"></i>8:00 Welcome guest, FnB Networking</h4>
+                                                    <h4 class="text-left text-yellow"><i class="typcn typcn-chevron-right-outline"></i>8:45 Performance by Russian Artist Sonya</h4>
+                                                    <h5 class="text-left text-yellow ml-6">- Silent Night</h5>
+                                                    <h5 class="text-left text-yellow ml-6">- Feliz Navidad</h5>
+                                                    <h5 class="text-left text-yellow ml-6">- Hello Việt Nam</h5>
+                                                    <h4 class="text-left text-yellow"><i class="typcn typcn-chevron-right-outline"></i>9:00 Opening Speech</h4>
+                                                    <h4 class="text-left text-yellow"><i class="typcn typcn-chevron-right-outline"></i>9:15 Performance Solo Trumpet by Juan</h4>
+                                                    <h5 class="text-left text-yellow ml-6">- Mixed by Bao DJ</h5>
+                                                    <h5 class="text-left text-yellow ml-6">- Dancing</h5>
+                                                    <h4 class="text-left text-yellow">Subject to enjoy XMas and Music</h4>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row border-top">
+                                        <h4 class="mt-3 text-yellow text-left" style="font-size:18px">Menu:</h4>
+                                        <div class="col-12">
+                                            <ul class="text-left">
+                                                <li>
+                                                    <h4 class="text-left text-yellow"><i></i>1. Smoked salmon, avocado mousse, salmon roe</h4>
+                                                    <h4 class="text-left text-yellow"><i></i>&nbsp;&nbsp;&nbsp;<i>Cá hồi xông khói, bơ trái, trứng cá hồi</i></h4>
+                                                    <h4 class="text-left text-yellow"><i></i>2. Seaweed tacos, grilled chicken w/ spicy teriyaki sauce</h4>
+                                                    <h4 class="text-left text-yellow"><i></i>&nbsp;&nbsp;&nbsp;<i>Bánh Tacos rong biển gà sốt cay</i></h4>
+                                                    <h4 class="text-left text-yellow"><i></i>3. Fried beef dumpling, vegetable</h4>
+                                                    <h4 class="text-left text-yellow"><i></i>&nbsp;&nbsp;&nbsp;<i>Chả bò chiên xù với rau củ</i></h4>
+                                                    <h4 class="text-left text-yellow"><i></i>4. Mixed fruits cup</h4>
+                                                    <h4 class="text-left text-yellow"><i></i>&nbsp;&nbsp;&nbsp;<i>Trái cây thập cẩm trộn</i></h4>
+                                                    <h4 class="text-left text-yellow"><i></i>5. Herb potato gratin</h4>
+                                                    <h4 class="text-left text-yellow"><i></i>&nbsp;&nbsp;&nbsp;<i>Khoai tây với thảo mộc đút lò</i></h4>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center flex-row-reverse">
+                                        <div class="col-lg-12 col-sm-12   text-center">
+                                            <img src="~/Areas/EventChristmas/Assets/images/brand/logo.png" class="header-brand-img main-logo" alt="Hogo logo">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row end -->
+                </div>
+
+            </div>
+            <!-- End app-content-->
+        </div>
+    </div>
+    <!-- End Page -->
+
+    <!-- Back to top -->
+    <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- File uploads js -->
+    <script src="~/Areas/EventChristmas/Assets/plugins/fileuploads/js/dropify.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/fileuploads/js/dropify-demo.js"></script>
+    <!--Bootstrap.min js-->
+    <script src="~/Areas/EventChristmas/Assets/plugins/bootstrap/popper.min.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Star Rating js-->
+    <script src="~/Areas/EventChristmas/Assets/plugins/rating/jquery.rating-stars.js"></script>
+
+    <!--Moment js-->
+    <script src="~/Areas/EventChristmas/Assets/plugins/moment/moment.min.js"></script>
+
+    <!-- Daterangepicker js-->
+    <script src="~/Areas/EventChristmas/Assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Horizontal-menu js -->
+    <script src="~/Areas/EventChristmas/Assets/plugins/horizontal-menu/horizontalmenu.js"></script>
+
+    <!-- Sidebar Accordions js -->
+    <script src="~/Areas/EventChristmas/Assets/plugins/accordion1/js/easyResponsiveTabs.js"></script>
+
+    <!-- Custom scroll bar js-->
+    <script src="~/Areas/EventChristmas/Assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!--Owl Carousel js -->
+    <script src="~/Areas/EventChristmas/Assets/plugins/owl-carousel/owl.carousel.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/owl-carousel/owl-main.js"></script>
+
+    <!-- Rightsidebar js -->
+    <script src="~/Areas/EventChristmas/Assets/plugins/sidebar/sidebar.js"></script>
+
+    <!--Time Counter js-->
+    <script src="~/Areas/EventChristmas/Assets/plugins/counters/jquery.missofis-countdown.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/counters/counter.js"></script>
+
+    <!--Lodash js-->
+    <script src="~/Areas/EventChristmas/Assets/plugins/lodash/lodash.js"></script>
+
+
+    <!-- Data tables js-->
+    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/jquery.dataTables.min.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/datatable.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/dataTables.responsive.min.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/dataTables.buttons.min.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/buttons.flash.min.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/jszip.min.js"></script>
+    @*    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/pdfmake.min.js"></script>*@
+    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/vfs_fonts.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/buttons.html5.min.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/buttons.print.min.js"></script>
+    @* <script src="~/Areas/EventChristmas/Assets/plugins/datatable/buttons.colVis.min.js"></script>*@
+    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/dataTables.fixedColumns.min.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/dataTables.fixedHeader.min.js"></script>
+    <!--Accordion-Wizard-Form js-->
+    <script src="~/Areas/EventChristmas/Assets/plugins/accordion-Wizard-Form/jquery.accordion-wizard.min.js"></script>
+
+    <!-- Forn-wizard js-->
+    <script src="~/Areas/EventChristmas/Assets/plugins/formwizard/jquery.smartWizard.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/formwizard/fromwizard.js"></script>
+
+    <!--Advanced Froms js-->
+    <script src="~/Areas/EventChristmas/Assets/js/advancedform.js"></script>
+
+    <script src="~/Areas/EventChristmas/Assets/plugins/datatable/dataRender/datetime.js"></script>
+
+    <!-- Timepicker js -->
+    <script src="~/Areas/EventChristmas/Assets/plugins/time-picker/jquery.timepicker.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/time-picker/toggles.min.js"></script>
+
+    <!--Col-Reorder-->
+    <script src="~/Areas/EventChristmas/Assets/plugins/col-reorder/col-reorder.min.js"></script>
+
+    <!-- Custom js-->
+    <script id="script1" src="~/Areas/EventChristmas/Assets/js/custom.js"></script>
+
+    <!-- Datepicker js -->
+    <script src="~/Areas/EventChristmas/Assets/plugins/date-picker/spectrum.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/date-picker/jquery-ui.js"></script>
+    <script src="~/Areas/EventChristmas/Assets/plugins/input-mask/jquery.maskedinput.js"></script>
+
+    <!-- Qrious js-->
+    <script src="~/Areas/EventChristmas/Assets/plugins/qrious/qrious.min.js"></script>
+
+    <!-- Sweet Alert 2 -->
+    <script src="~/Areas/EventChristmas/Assets/plugins/sweet-alert2/sweet-alert2.js"></script>
+</body>
+</html>
+<script>
+    let dataCompany = [];
+    let dataMember = [];
+    let dataSector = [];
+    $(document).ready(function () {
+        getSector();
+        QRCode();
+    })
+    function getSector() {
+        $.ajax({
+            url: "/api/Sector?IsActive=true&OrderBy=DESC",
+            type: 'get',
+            success: function (_Result) {
+                if (_Result.Status == 200) {
+                    getCompany();
+                    dataSector = _Result.Data;
+                    let all = '<label class="custom-control custom-checkbox">';
+                    all += '<input type="checkbox" class="custom-control-input" checked name="example-checkbox1" id="-1">';
+                    all += '<span class="custom-control-label text-yellow">All</span>';
+                    all += '</label>';
+                    $('#filter-sector').empty().append(all);
+                    $.each(_Result.Data, function (k, v) {
+                        let lb = '<label class="custom-control custom-checkbox">';
+                        lb += '<input type="checkbox" class="custom-control-input" checked name="example-checkbox1" id="' + v.SectorID +'" >';
+                        lb += '<span class="custom-control-label text-yellow">' + v.SectorName + '</span>';
+                        lb += '</label>';
+                        $('#filter-sector').append(lb);
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: _Result.Description.en,
+                        showConfirmButton: false,
+                        timer: 3500
+                    });
+                }
+            }
+        });
+    }
+    function getCompany() {
+        $.ajax({
+            url: "/api/Company?IsActive=true&OrderBy=DESC",
+            type: 'get',
+            success: function (_Result) {
+                if (_Result.Status == 200) {
+                    dataCompany = _Result.Data;
+                    appendCompany(dataCompany);
+                    getMemberID();
+                    getMember();
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: _Result.Description.en,
+                        showConfirmButton: false,
+                        timer: 3500
+                    });
+                }
+            }
+        });
+    }
+    function appendCompany(data) {
+        let all = '<label class="custom-control custom-checkbox">';
+        all += '<input type="checkbox" class="custom-control-input" checked name="example-checkbox1" id="-1">';
+        all += '<span class="custom-control-label text-yellow">All</span>';
+        all += '</label>';
+        $('#filter-company').empty().append(all);
+        $.each(data, function (k, v) {
+            let lb = '<label class="custom-control custom-checkbox">';
+            lb += '<input type="checkbox" class="custom-control-input" checked name="example-checkbox1" id="' + v.CompanyID + '" sectorID="' + v.SectorID + '" >';
+            lb += '<span class="custom-control-label text-yellow">' + v.CompayName + '</span>';
+            lb += '</label>';
+            $('#filter-company').append(lb);
+        });
+    }
+    $(document).on('click', '#filter-sector .custom-control-input[id != -1]', function () {
+        let id = $(this).attr('id');
+        if (id == -1) {
+            $('#filter-sector').find('.custom-control-input').prop('checked', true);
+            $('#filter-company').find('.custom-control-input').prop('checked', true);
+            $('#filter-company').find('.custom-control-input').closest('.custom-control').attr('hidden', false);
+            valueMember();
+        } else {
+            $('#filter-sector').find('.custom-control-input[id=-1]').prop('checked', false);
+            changeCompany();
+        }
+    })
+    $(document).on('click', '#filter-sector .custom-control-input[id = -1]', function () {
+        let check = $(this).is(':checked');
+        if (check == true) {
+            $('#filter-sector').find('.custom-control-input').prop('checked', true);
+            $('#filter-company').find('.custom-control-input').prop('checked', true);
+            $('#filter-company').find('.custom-control-input').closest('.custom-control').attr('hidden', false);
+            valueMember();
+        } else {
+            $('#filter-sector').find('.custom-control-input[id != -1]').prop('checked', false);
+            changeCompany();
+        }
+    })
+    $(document).on('click', '#filter-company .custom-control-input[id != -1]', function () {
+        let id = $(this).attr('id');
+        $('#filter-company').find('.custom-control-input[id=-1]').prop('checked', false);
+        valueMember();
+    })
+    $(document).on('click', '#filter-company .custom-control-input[id = -1]', function () {
+        let check = $(this).is(':checked');
+        if (check == true) {
+            $('#filter-company').find('.custom-control-input[id != -1]').prop('checked', true);
+        } else {
+            $('#filter-company').find('.custom-control-input[id != -1]').prop('checked', false);
+        }
+        valueMember();
+    })
+    function changeCompany() {
+        let data = $('#filter-sector').find('.custom-control-input');
+        let length = data.length;
+        let uncheck = 0;
+        $.each(data, function (k, v) {
+            let id = $(v).attr('id');
+            let active = $(v).is(':checked');
+            if (active == true) {
+                $('#filter-company').find('.custom-control-input[sectorID="' + id + '"]').closest('.custom-control').attr('hidden', false);
+            } else {
+                uncheck += 1;
+                $('#filter-company').find('.custom-control-input[sectorID="' + id + '"]').closest('.custom-control').attr('hidden', true);
+            }
+        })
+        if (length == uncheck) {
+            $('#filter-company').find('.custom-control-input[id=-1]').prop('checked', false);
+        }
+        valueMember();
+    }
+
+    function getMemberID() {
+        $.ajax({
+            url: "/api/Member?MemberID=" + '@Session["MemberID"]' + "&IsActive=true",
+            type: 'get',
+            success: function (_Result) {
+                if (_Result.Status == 200) {
+                    valueMemberID(_Result.Data[0]);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: _Result.Description.en,
+                        showConfirmButton: false,
+                        timer: 3500
+                    });
+                }
+            }
+        });
+    }
+    function valueMemberID(_data) {
+        $('#member-name').text('Welcome ' + _data.FullName);
+        $('#member-title').text('Title: ' + _data.Title);
+
+        $('#member-company').text('Company: ' + _data.Company.CompayName);
+        if (_data.IsConfirm == true) {
+            $('#member-btn').text('Thank you for participation ').append('(<i class="zmdi zmdi-pin"></i> ' + _data.Table + ')');
+        } else {
+            $('#member-btn').text('Please confirm to join: ').append('<a class="btn btn-sm btn-success text-white" id="btn-confirm">Confirm</a>');
+        }
+    }
+    $(document).on('click','#btn-confirm', function () {
+        $(this).addClass('btn-loading');
+        let id = '@Session["MemberID"]';
+        let isconfirm = true;
+        let data = {
+            "MemberID": id,
+            "IsConfirm": isconfirm
+        }
+        putConfirm(data);
+    })
+    function putConfirm(_data) {
+        $.ajax({
+            url:'/api/Member',
+            type: 'PUT',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify(_data),
+            success: function (res) {
+                if (res.Status == 200) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Thank you for participation',
+                        confirmButtonText: "Close",
+                        showCancelButton: false,
+                        timer: 3500
+                    });
+                    let data = dataCompany.find(x => x.CompanyID == res.Data.CompanyID);
+                    let sector = dataSector.find(x => x.SectorID == data.SectorID);
+                    res.Data["Company"] = {
+                        "CompayName": data.CompayName,
+                        "CompanyID": data.CompanyID
+                    }
+                    
+                    let tr = "";
+                    tr += '<tr id=' + data.CompanyID + '>';
+                    tr += '<td class="text-left" style="border-top: 1px solid rgba(107,122,144,0.1);"> ' + res.Data.FullName + ' (' + res.Data.Title + '), ' + res.Data.Company.CompayName + ', ' + sector.SectorName +' </td>';
+                    tr += '</tr>';
+                    $('#data-member').append(tr);
+                    dataMember.push(res.Data);
+                    $('#member-btn').text('Thank you for your participation').append('(<i class="zmdi zmdi-pin"></i> ' + res.Data.Table + ')');
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: res.Description.en,
+                        confirmButtonText: "Close",
+                        showCancelButton: false,
+                        timer: 3500
+                    });
+
+                }
+            }
+        });
+    }
+    function getMember() {
+        $.ajax({
+            url: "/api/Member?IsActive=true&IsConfirm=true",
+            type: 'get',
+            success: function (_Result) {
+                if (_Result.Status == 200) {
+                    dataMember = _Result.Data;
+                    appendMember(dataMember);
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: _Result.Description.en,
+                        showConfirmButton: false,
+                        timer: 3500
+                    });
+                }
+            }
+        });
+    }
+    function valueMember() {
+        let data = $('#filter-company').find('.custom-control-input');
+        let all = $('#filter-company').find('.custom-control-input[sectorID="-1"]');
+        if (all == -1) {
+            $('tr').attr('hidden', false);
+        } else {
+            $.each(data, function (k, v) {
+                let id = $(v).attr('id');
+                let active = $(v).is(':checked');
+                let hidden = $(v).is(':hidden');
+                if (active == true && hidden != true) {
+                    $('tr[id='+ id +']').attr('hidden', false);
+                } else {
+                    $('tr[id=' + id + ']').attr('hidden', true);
+                }
+            })
+        }   
+    }
+    function appendMember(_data) {
+        $('#data-member').empty();
+        $.each(_data, function (k, v) {
+            let company = dataCompany.find(x => x.CompanyID == v.Company.CompanyID);
+            let sector = dataSector.find(x => x.SectorID == company.SectorID);
+            let data = "";
+            data += '<tr id=' + v.Company.CompanyID + '>';
+            data += '<td class="text-left" style="border-top: 1px solid rgba(107,122,144,0.1);"> ' + v.FullName + ' (' + v.Title + '), ' + v.Company.CompayName + ', ' + sector.SectorName +' </td>';
+            data += '</tr>';
+            $('#data-member').append(data);
+        })
+    }
+    function QRCode() {
+        let qr;
+        qr = new QRious({
+            element: document.getElementById('qr-code'),
+            size: 130,
+            value: window.location.href,
+            foreground: 'black',
+        });
+    }/* '#fdb901'*/
+</script>
+

@@ -1,0 +1,2157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Models.Store" Provider="iAnywhere.Data.SQLAnywhere" ProviderManifestToken="12" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="AIBoxCameras">
+          <Key>
+            <PropertyRef Name="AIBoxCameraID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AIBoxCameraID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CameraName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CameraRTSP" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="AIBoxServerID" Type="char" MaxLength="36" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AIBoxHistorys">
+          <Key>
+            <PropertyRef Name="AIBoxHistoryID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AIBoxHistoryID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="MemberID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="AIBoxPersonID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="AIBoxCameraID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="ImageData" Type="varbinary(max)" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AIBoxServers">
+          <Key>
+            <PropertyRef Name="AIBoxServerID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AIBoxServerID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="AIBoxServerName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="AIBoxServerAddress" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="StoreID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CampaignCodes">
+          <Key>
+            <PropertyRef Name="CampaignCodeID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CampaignCodeID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CampaignID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CampaignCodeText" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TotalIssued" Type="int" Nullable="false" />
+          <Property Name="TotalUsed" Type="int" Nullable="false" />
+          <Property Name="FromDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpiredDate" Type="datetime" Nullable="false" />
+          <Property Name="CampaignCodeStatus" Type="int" Nullable="false" />
+          <Property Name="MemberID" Type="char" MaxLength="36" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CampaignCodeTransactions">
+          <Key>
+            <PropertyRef Name="CampaignCodeTransactionID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CampaignCodeTransactionID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CampaignCodeTransactionType" Type="int" Nullable="false" />
+          <Property Name="CampaignCodeTransactionNotes" Type="nvarchar" MaxLength="255" />
+          <Property Name="CampaignCodeTransactionStatus" Type="int" Nullable="false" />
+          <Property Name="CampaignCodeID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="EmployeeID" Type="char" MaxLength="36" />
+          <Property Name="StoreID" Type="char" MaxLength="36" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CampaignGroups">
+          <Key>
+            <PropertyRef Name="CampaignGroupID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CampaignGroupID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CampaignGroupName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CampaignMemberGroupLinks">
+          <Key>
+            <PropertyRef Name="CampaignMemberGroupID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CampaignMemberGroupID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CampaignID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CampaignGroupID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Campaigns">
+          <Key>
+            <PropertyRef Name="CampaignID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CampaignID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CampaignName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CampaignType" Type="int" Nullable="false" />
+          <Property Name="CampaignValue" Type="float" Nullable="false" />
+          <Property Name="CampaignNotes" Type="nvarchar" MaxLength="255" />
+          <Property Name="RequireAmount" Type="float" Nullable="false" />
+          <Property Name="LimitAmount" Type="float" Nullable="false" />
+          <Property Name="ApplyAllStores" Type="bit" Nullable="false" />
+          <Property Name="ApplyAllMemberGroups" Type="bit" Nullable="false" />
+          <Property Name="EmployeeID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="RequirePoints" Type="float" Nullable="false" />
+          <Property Name="CampaignGroupID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="ImageData" Type="varbinary(max)" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="DayOfUsed" Type="int" Nullable="false" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CampaignStoreLinks">
+          <Key>
+            <PropertyRef Name="CampaignStoreID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CampaignStoreID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CampaignID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="StoreID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeFunctionLinks">
+          <Key>
+            <PropertyRef Name="EmployeeFunctionID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeFunctionID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="EmployeeID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="FunctionID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeGroups">
+          <Key>
+            <PropertyRef Name="EmployeeGroupID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeGroupID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="EmployeeGroupName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmployeeGroupID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="AccessAllStores" Type="bit" Nullable="false" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="EmployeeStoreLinks">
+          <Key>
+            <PropertyRef Name="EmployeeStoreID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeStoreID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="EmployeeID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="StoreID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Functions">
+          <Key>
+            <PropertyRef Name="FunctionID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FunctionID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="FunctionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="ModuleID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberAIBoxLinks">
+          <Key>
+            <PropertyRef Name="MemberAIBoxID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberAIBoxID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="MemberID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="AIBoxPersonID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="AIBoxConfigID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="ImageData" Type="varbinary(max)" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberCodes">
+          <Key>
+            <PropertyRef Name="MemberCodeID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberCodeID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="MemberID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CodeType" Type="int" Nullable="false" />
+          <Property Name="CodeText" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CodeStatus" Type="int" Nullable="false" />
+          <Property Name="DateExpired" Type="datetime" Nullable="false" />
+          <Property Name="DateUsed" Type="datetime" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberDeliverys">
+          <Key>
+            <PropertyRef Name="MemberDeliveryID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberDeliveryID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="MemberDeliveryName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberGroups">
+          <Key>
+            <PropertyRef Name="MemberGroupID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberGroupID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="MemberGroupName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberPointLinks">
+          <Key>
+            <PropertyRef Name="MemberPointID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberPointID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="MemberID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="PointID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="CurrentPoints" Type="float" Nullable="false" />
+          <Property Name="UsedPoints" Type="float" Nullable="false" />
+          <Property Name="TotalPoints" Type="float" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberPointTransactions">
+          <Key>
+            <PropertyRef Name="MemberPointTransactionID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberPointTransactionID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="MemberPointTransactionType" Type="int" Nullable="false" />
+          <Property Name="MemberPointTransactionNotes" Type="nvarchar" MaxLength="255" />
+          <Property Name="MemberPointTransactionStatus" Type="int" Nullable="false" />
+          <Property Name="PointValue" Type="float" Nullable="false" />
+          <Property Name="MemberID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="PointID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="EmployeeID" Type="char" MaxLength="36" />
+          <Property Name="StoreID" Type="char" MaxLength="36" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Members">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="20" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="CardNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MemberGroupID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberWalletLinks">
+          <Key>
+            <PropertyRef Name="MemberWalletID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberWalletID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="MemberID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="WalletID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="WalletValue" Type="float" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberWalletTransactions">
+          <Key>
+            <PropertyRef Name="MemberWalletTransactionID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MemberWalletTransactionID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="MemberWalletTransactionType" Type="int" Nullable="false" />
+          <Property Name="MemberWalletTransactionNotes" Type="nvarchar" MaxLength="255" />
+          <Property Name="MemberWalletTransactionStatus" Type="int" Nullable="false" />
+          <Property Name="WalletValue" Type="float" Nullable="false" />
+          <Property Name="MemberID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="WalletID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="EmployeeID" Type="char" MaxLength="36" />
+          <Property Name="StoreID" Type="char" MaxLength="36" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Points">
+          <Key>
+            <PropertyRef Name="PointID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PointID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="PointName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PointType" Type="int" Nullable="false" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reservations">
+          <Key>
+            <PropertyRef Name="ReservationID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReservationID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="ReservationStatus" Type="int" Nullable="false" />
+          <Property Name="StoreID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="MemberID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="NumberOfCustomer" Type="int" Nullable="false" />
+          <Property Name="ArrivalDate" Type="datetime" Nullable="false" />
+          <Property Name="Duration" Type="float" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmployeeIDCreated" Type="char" MaxLength="36" />
+          <Property Name="EmployeeIDConfirmed" Type="char" MaxLength="36" />
+          <Property Name="EmployeeIDAssigned" Type="char" MaxLength="36" />
+          <Property Name="DateConfirmed" Type="datetime" />
+          <Property Name="DateAssigned" Type="datetime" />
+          <Property Name="TransactionID" Type="char" MaxLength="36" />
+          <Property Name="TransactionTotal" Type="float" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Stores">
+          <Key>
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="StoreName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wallets">
+          <Key>
+            <PropertyRef Name="WalletID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WalletID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="WalletName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="WalletType" Type="int" Nullable="false" />
+          <Property Name="ReferenceCode" Type="varchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelsStoreContainer">
+          <EntitySet Name="AIBoxCameras" EntityType="Self.AIBoxCameras" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="AIBoxHistorys" EntityType="Self.AIBoxHistorys" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="AIBoxServers" EntityType="Self.AIBoxServers" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="CampaignCodes" EntityType="Self.CampaignCodes" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="CampaignCodeTransactions" EntityType="Self.CampaignCodeTransactions" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="CampaignGroups" EntityType="Self.CampaignGroups" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="CampaignMemberGroupLinks" EntityType="Self.CampaignMemberGroupLinks" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="Campaigns" EntityType="Self.Campaigns" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="CampaignStoreLinks" EntityType="Self.CampaignStoreLinks" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="EmployeeFunctionLinks" EntityType="Self.EmployeeFunctionLinks" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="EmployeeGroups" EntityType="Self.EmployeeGroups" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="EmployeeStoreLinks" EntityType="Self.EmployeeStoreLinks" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="Functions" EntityType="Self.Functions" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="MemberAIBoxLinks" EntityType="Self.MemberAIBoxLinks" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="MemberCodes" EntityType="Self.MemberCodes" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="MemberDeliverys" EntityType="Self.MemberDeliverys" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="MemberGroups" EntityType="Self.MemberGroups" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="MemberPointLinks" EntityType="Self.MemberPointLinks" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="MemberPointTransactions" EntityType="Self.MemberPointTransactions" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="Members" EntityType="Self.Members" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="MemberWalletLinks" EntityType="Self.MemberWalletLinks" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="MemberWalletTransactions" EntityType="Self.MemberWalletTransactions" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="Points" EntityType="Self.Points" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="Reservations" EntityType="Self.Reservations" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="Stores" EntityType="Self.Stores" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="Wallets" EntityType="Self.Wallets" Schema="DBA" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Models" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SpeedClientDbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AIBoxCameras" EntityType="Models.AIBoxCamera" />
+          <EntitySet Name="AIBoxHistorys" EntityType="Models.AIBoxHistory" />
+          <EntitySet Name="AIBoxServers" EntityType="Models.AIBoxServer" />
+          <EntitySet Name="CampaignCodes" EntityType="Models.CampaignCode" />
+          <EntitySet Name="CampaignCodeTransactions" EntityType="Models.CampaignCodeTransaction" />
+          <EntitySet Name="CampaignGroups" EntityType="Models.CampaignGroup" />
+          <EntitySet Name="CampaignMemberGroupLinks" EntityType="Models.CampaignMemberGroupLink" />
+          <EntitySet Name="Campaigns" EntityType="Models.Campaign" />
+          <EntitySet Name="CampaignStoreLinks" EntityType="Models.CampaignStoreLink" />
+          <EntitySet Name="EmployeeFunctionLinks" EntityType="Models.EmployeeFunctionLink" />
+          <EntitySet Name="EmployeeGroups" EntityType="Models.EmployeeGroup" />
+          <EntitySet Name="Employees" EntityType="Models.Employee" />
+          <EntitySet Name="EmployeeStoreLinks" EntityType="Models.EmployeeStoreLink" />
+          <EntitySet Name="Functions" EntityType="Models.Function" />
+          <EntitySet Name="MemberAIBoxLinks" EntityType="Models.MemberAIBoxLink" />
+          <EntitySet Name="MemberCodes" EntityType="Models.MemberCode" />
+          <EntitySet Name="MemberDeliverys" EntityType="Models.MemberDelivery" />
+          <EntitySet Name="MemberGroups" EntityType="Models.MemberGroup" />
+          <EntitySet Name="MemberPointLinks" EntityType="Models.MemberPointLink" />
+          <EntitySet Name="MemberPointTransactions" EntityType="Models.MemberPointTransaction" />
+          <EntitySet Name="Members" EntityType="Models.Member" />
+          <EntitySet Name="MemberWalletLinks" EntityType="Models.MemberWalletLink" />
+          <EntitySet Name="MemberWalletTransactions" EntityType="Models.MemberWalletTransaction" />
+          <EntitySet Name="Points" EntityType="Models.Point" />
+          <EntitySet Name="Reservations" EntityType="Models.Reservation" />
+          <EntitySet Name="Stores" EntityType="Models.Store" />
+          <EntitySet Name="Wallets" EntityType="Models.Wallet" />
+        </EntityContainer>
+        <EntityType Name="AIBoxCamera">
+          <Key>
+            <PropertyRef Name="AIBoxCameraID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AIBoxCameraID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CameraName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CameraRTSP" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="AIBoxServerID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AIBoxHistory">
+          <Key>
+            <PropertyRef Name="AIBoxHistoryID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AIBoxHistoryID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="AIBoxPersonID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="AIBoxCameraID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="ImageData" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AIBoxServer">
+          <Key>
+            <PropertyRef Name="AIBoxServerID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AIBoxServerID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="AIBoxServerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AIBoxServerAddress" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="StoreID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CampaignCode">
+          <Key>
+            <PropertyRef Name="CampaignCodeID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignCodeID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CampaignID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CampaignCodeText" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalIssued" Type="Int32" Nullable="false" />
+          <Property Name="TotalUsed" Type="Int32" Nullable="false" />
+          <Property Name="FromDate" Type="DateTime" Nullable="false" />
+          <Property Name="ExpiredDate" Type="DateTime" Nullable="false" />
+          <Property Name="CampaignCodeStatus" Type="Int32" Nullable="false" />
+          <Property Name="MemberID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CampaignCodeTransaction">
+          <Key>
+            <PropertyRef Name="CampaignCodeTransactionID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignCodeTransactionID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CampaignCodeTransactionType" Type="Int32" Nullable="false" />
+          <Property Name="CampaignCodeTransactionNotes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CampaignCodeTransactionStatus" Type="Int32" Nullable="false" />
+          <Property Name="CampaignCodeID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="StoreID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CampaignGroup">
+          <Key>
+            <PropertyRef Name="CampaignGroupID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignGroupID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CampaignGroupName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CampaignMemberGroupLink">
+          <Key>
+            <PropertyRef Name="CampaignMemberGroupID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignMemberGroupID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CampaignID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CampaignGroupID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Campaign">
+          <Key>
+            <PropertyRef Name="CampaignID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CampaignName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CampaignType" Type="Int32" Nullable="false" />
+          <Property Name="CampaignValue" Type="Double" Nullable="false" />
+          <Property Name="CampaignNotes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RequireAmount" Type="Double" Nullable="false" />
+          <Property Name="LimitAmount" Type="Double" Nullable="false" />
+          <Property Name="ApplyAllStores" Type="Boolean" Nullable="false" />
+          <Property Name="ApplyAllMemberGroups" Type="Boolean" Nullable="false" />
+          <Property Name="EmployeeID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="RequirePoints" Type="Double" Nullable="false" />
+          <Property Name="CampaignGroupID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="ImageData" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="DayOfUsed" Type="Int32" Nullable="false" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CampaignStoreLink">
+          <Key>
+            <PropertyRef Name="CampaignStoreID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CampaignStoreID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CampaignID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="StoreID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeFunctionLink">
+          <Key>
+            <PropertyRef Name="EmployeeFunctionID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeFunctionID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="EmployeeID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="FunctionID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeGroup">
+          <Key>
+            <PropertyRef Name="EmployeeGroupID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeGroupID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="EmployeeGroupName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="EmployeeName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeGroupID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="AccessAllStores" Type="Boolean" Nullable="false" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="EmployeeStoreLink">
+          <Key>
+            <PropertyRef Name="EmployeeStoreID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeStoreID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="EmployeeID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="StoreID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Function">
+          <Key>
+            <PropertyRef Name="FunctionID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FunctionID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="FunctionName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="ModuleID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberAIBoxLink">
+          <Key>
+            <PropertyRef Name="MemberAIBoxID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberAIBoxID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="AIBoxPersonID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="AIBoxConfigID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="ImageData" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberCode">
+          <Key>
+            <PropertyRef Name="MemberCodeID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberCodeID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CodeType" Type="Int32" Nullable="false" />
+          <Property Name="CodeText" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CodeStatus" Type="Int32" Nullable="false" />
+          <Property Name="DateExpired" Type="DateTime" Nullable="false" />
+          <Property Name="DateUsed" Type="DateTime" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberDelivery">
+          <Key>
+            <PropertyRef Name="MemberDeliveryID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberDeliveryID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="MemberDeliveryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberGroup">
+          <Key>
+            <PropertyRef Name="MemberGroupID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberGroupID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="MemberGroupName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberPointLink">
+          <Key>
+            <PropertyRef Name="MemberPointID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberPointID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="PointID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="CurrentPoints" Type="Double" Nullable="false" />
+          <Property Name="UsedPoints" Type="Double" Nullable="false" />
+          <Property Name="TotalPoints" Type="Double" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberPointTransaction">
+          <Key>
+            <PropertyRef Name="MemberPointTransactionID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberPointTransactionID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="MemberPointTransactionType" Type="Int32" Nullable="false" />
+          <Property Name="MemberPointTransactionNotes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MemberPointTransactionStatus" Type="Int32" Nullable="false" />
+          <Property Name="PointValue" Type="Double" Nullable="false" />
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="PointID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="StoreID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CardNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MemberGroupID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberWalletLink">
+          <Key>
+            <PropertyRef Name="MemberWalletID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberWalletID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="WalletID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="WalletValue" Type="Double" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MemberWalletTransaction">
+          <Key>
+            <PropertyRef Name="MemberWalletTransactionID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MemberWalletTransactionID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="MemberWalletTransactionType" Type="Int32" Nullable="false" />
+          <Property Name="MemberWalletTransactionNotes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MemberWalletTransactionStatus" Type="Int32" Nullable="false" />
+          <Property Name="WalletValue" Type="Double" Nullable="false" />
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="WalletID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="StoreID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Point">
+          <Key>
+            <PropertyRef Name="PointID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PointID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="PointName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PointType" Type="Int32" Nullable="false" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reservation">
+          <Key>
+            <PropertyRef Name="ReservationID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReservationID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="ReservationStatus" Type="Int32" Nullable="false" />
+          <Property Name="StoreID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="MemberID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="NumberOfCustomer" Type="Int32" Nullable="false" />
+          <Property Name="ArrivalDate" Type="DateTime" Nullable="false" />
+          <Property Name="Duration" Type="Double" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeIDCreated" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="EmployeeIDConfirmed" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="EmployeeIDAssigned" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DateConfirmed" Type="DateTime" />
+          <Property Name="DateAssigned" Type="DateTime" />
+          <Property Name="TransactionID" Type="String" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="TransactionTotal" Type="Double" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="StoreID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="StoreName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Wallet">
+          <Key>
+            <PropertyRef Name="WalletID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WalletID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="WalletName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WalletType" Type="Int32" Nullable="false" />
+          <Property Name="ReferenceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="SpeedClientDbContext">
+          <EntitySetMapping Name="AIBoxCameras">
+            <EntityTypeMapping TypeName="Models.AIBoxCamera">
+              <MappingFragment StoreEntitySet="AIBoxCameras">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="AIBoxServerID" ColumnName="AIBoxServerID" />
+                <ScalarProperty Name="CameraRTSP" ColumnName="CameraRTSP" />
+                <ScalarProperty Name="CameraName" ColumnName="CameraName" />
+                <ScalarProperty Name="AIBoxCameraID" ColumnName="AIBoxCameraID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AIBoxHistorys">
+            <EntityTypeMapping TypeName="Models.AIBoxHistory">
+              <MappingFragment StoreEntitySet="AIBoxHistorys">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ImageData" ColumnName="ImageData" />
+                <ScalarProperty Name="AIBoxCameraID" ColumnName="AIBoxCameraID" />
+                <ScalarProperty Name="AIBoxPersonID" ColumnName="AIBoxPersonID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="AIBoxHistoryID" ColumnName="AIBoxHistoryID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AIBoxServers">
+            <EntityTypeMapping TypeName="Models.AIBoxServer">
+              <MappingFragment StoreEntitySet="AIBoxServers">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="AIBoxServerAddress" ColumnName="AIBoxServerAddress" />
+                <ScalarProperty Name="AIBoxServerName" ColumnName="AIBoxServerName" />
+                <ScalarProperty Name="AIBoxServerID" ColumnName="AIBoxServerID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CampaignCodes">
+            <EntityTypeMapping TypeName="Models.CampaignCode">
+              <MappingFragment StoreEntitySet="CampaignCodes">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="CampaignCodeStatus" ColumnName="CampaignCodeStatus" />
+                <ScalarProperty Name="ExpiredDate" ColumnName="ExpiredDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="TotalUsed" ColumnName="TotalUsed" />
+                <ScalarProperty Name="TotalIssued" ColumnName="TotalIssued" />
+                <ScalarProperty Name="CampaignCodeText" ColumnName="CampaignCodeText" />
+                <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+                <ScalarProperty Name="CampaignCodeID" ColumnName="CampaignCodeID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CampaignCodeTransactions">
+            <EntityTypeMapping TypeName="Models.CampaignCodeTransaction">
+              <MappingFragment StoreEntitySet="CampaignCodeTransactions">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="CampaignCodeID" ColumnName="CampaignCodeID" />
+                <ScalarProperty Name="CampaignCodeTransactionStatus" ColumnName="CampaignCodeTransactionStatus" />
+                <ScalarProperty Name="CampaignCodeTransactionNotes" ColumnName="CampaignCodeTransactionNotes" />
+                <ScalarProperty Name="CampaignCodeTransactionType" ColumnName="CampaignCodeTransactionType" />
+                <ScalarProperty Name="CampaignCodeTransactionID" ColumnName="CampaignCodeTransactionID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CampaignGroups">
+            <EntityTypeMapping TypeName="Models.CampaignGroup">
+              <MappingFragment StoreEntitySet="CampaignGroups">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="CampaignGroupName" ColumnName="CampaignGroupName" />
+                <ScalarProperty Name="CampaignGroupID" ColumnName="CampaignGroupID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CampaignMemberGroupLinks">
+            <EntityTypeMapping TypeName="Models.CampaignMemberGroupLink">
+              <MappingFragment StoreEntitySet="CampaignMemberGroupLinks">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="CampaignGroupID" ColumnName="CampaignGroupID" />
+                <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+                <ScalarProperty Name="CampaignMemberGroupID" ColumnName="CampaignMemberGroupID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Campaigns">
+            <EntityTypeMapping TypeName="Models.Campaign">
+              <MappingFragment StoreEntitySet="Campaigns">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="DayOfUsed" ColumnName="DayOfUsed" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="ImageData" ColumnName="ImageData" />
+                <ScalarProperty Name="CampaignGroupID" ColumnName="CampaignGroupID" />
+                <ScalarProperty Name="RequirePoints" ColumnName="RequirePoints" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="ApplyAllMemberGroups" ColumnName="ApplyAllMemberGroups" />
+                <ScalarProperty Name="ApplyAllStores" ColumnName="ApplyAllStores" />
+                <ScalarProperty Name="LimitAmount" ColumnName="LimitAmount" />
+                <ScalarProperty Name="RequireAmount" ColumnName="RequireAmount" />
+                <ScalarProperty Name="CampaignNotes" ColumnName="CampaignNotes" />
+                <ScalarProperty Name="CampaignValue" ColumnName="CampaignValue" />
+                <ScalarProperty Name="CampaignType" ColumnName="CampaignType" />
+                <ScalarProperty Name="CampaignName" ColumnName="CampaignName" />
+                <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CampaignStoreLinks">
+            <EntityTypeMapping TypeName="Models.CampaignStoreLink">
+              <MappingFragment StoreEntitySet="CampaignStoreLinks">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="CampaignID" ColumnName="CampaignID" />
+                <ScalarProperty Name="CampaignStoreID" ColumnName="CampaignStoreID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeFunctionLinks">
+            <EntityTypeMapping TypeName="Models.EmployeeFunctionLink">
+              <MappingFragment StoreEntitySet="EmployeeFunctionLinks">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmployeeFunctionID" ColumnName="EmployeeFunctionID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeGroups">
+            <EntityTypeMapping TypeName="Models.EmployeeGroup">
+              <MappingFragment StoreEntitySet="EmployeeGroups">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="EmployeeGroupName" ColumnName="EmployeeGroupName" />
+                <ScalarProperty Name="EmployeeGroupID" ColumnName="EmployeeGroupID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="Models.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="AccessAllStores" ColumnName="AccessAllStores" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="EmployeeGroupID" ColumnName="EmployeeGroupID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeStoreLinks">
+            <EntityTypeMapping TypeName="Models.EmployeeStoreLink">
+              <MappingFragment StoreEntitySet="EmployeeStoreLinks">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmployeeStoreID" ColumnName="EmployeeStoreID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Functions">
+            <EntityTypeMapping TypeName="Models.Function">
+              <MappingFragment StoreEntitySet="Functions">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="FunctionName" ColumnName="FunctionName" />
+                <ScalarProperty Name="FunctionID" ColumnName="FunctionID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberAIBoxLinks">
+            <EntityTypeMapping TypeName="Models.MemberAIBoxLink">
+              <MappingFragment StoreEntitySet="MemberAIBoxLinks">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="ImageData" ColumnName="ImageData" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="AIBoxConfigID" ColumnName="AIBoxConfigID" />
+                <ScalarProperty Name="AIBoxPersonID" ColumnName="AIBoxPersonID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="MemberAIBoxID" ColumnName="MemberAIBoxID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberCodes">
+            <EntityTypeMapping TypeName="Models.MemberCode">
+              <MappingFragment StoreEntitySet="MemberCodes">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateUsed" ColumnName="DateUsed" />
+                <ScalarProperty Name="DateExpired" ColumnName="DateExpired" />
+                <ScalarProperty Name="CodeStatus" ColumnName="CodeStatus" />
+                <ScalarProperty Name="CodeText" ColumnName="CodeText" />
+                <ScalarProperty Name="CodeType" ColumnName="CodeType" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="MemberCodeID" ColumnName="MemberCodeID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberDeliverys">
+            <EntityTypeMapping TypeName="Models.MemberDelivery">
+              <MappingFragment StoreEntitySet="MemberDeliverys">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MemberDeliveryName" ColumnName="MemberDeliveryName" />
+                <ScalarProperty Name="MemberDeliveryID" ColumnName="MemberDeliveryID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberGroups">
+            <EntityTypeMapping TypeName="Models.MemberGroup">
+              <MappingFragment StoreEntitySet="MemberGroups">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="MemberGroupName" ColumnName="MemberGroupName" />
+                <ScalarProperty Name="MemberGroupID" ColumnName="MemberGroupID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberPointLinks">
+            <EntityTypeMapping TypeName="Models.MemberPointLink">
+              <MappingFragment StoreEntitySet="MemberPointLinks">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="TotalPoints" ColumnName="TotalPoints" />
+                <ScalarProperty Name="UsedPoints" ColumnName="UsedPoints" />
+                <ScalarProperty Name="CurrentPoints" ColumnName="CurrentPoints" />
+                <ScalarProperty Name="PointID" ColumnName="PointID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="MemberPointID" ColumnName="MemberPointID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberPointTransactions">
+            <EntityTypeMapping TypeName="Models.MemberPointTransaction">
+              <MappingFragment StoreEntitySet="MemberPointTransactions">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="PointID" ColumnName="PointID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="PointValue" ColumnName="PointValue" />
+                <ScalarProperty Name="MemberPointTransactionStatus" ColumnName="MemberPointTransactionStatus" />
+                <ScalarProperty Name="MemberPointTransactionNotes" ColumnName="MemberPointTransactionNotes" />
+                <ScalarProperty Name="MemberPointTransactionType" ColumnName="MemberPointTransactionType" />
+                <ScalarProperty Name="MemberPointTransactionID" ColumnName="MemberPointTransactionID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="Models.Member">
+              <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="MemberGroupID" ColumnName="MemberGroupID" />
+                <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberWalletLinks">
+            <EntityTypeMapping TypeName="Models.MemberWalletLink">
+              <MappingFragment StoreEntitySet="MemberWalletLinks">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="WalletValue" ColumnName="WalletValue" />
+                <ScalarProperty Name="WalletID" ColumnName="WalletID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="MemberWalletID" ColumnName="MemberWalletID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MemberWalletTransactions">
+            <EntityTypeMapping TypeName="Models.MemberWalletTransaction">
+              <MappingFragment StoreEntitySet="MemberWalletTransactions">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="WalletID" ColumnName="WalletID" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="WalletValue" ColumnName="WalletValue" />
+                <ScalarProperty Name="MemberWalletTransactionStatus" ColumnName="MemberWalletTransactionStatus" />
+                <ScalarProperty Name="MemberWalletTransactionNotes" ColumnName="MemberWalletTransactionNotes" />
+                <ScalarProperty Name="MemberWalletTransactionType" ColumnName="MemberWalletTransactionType" />
+                <ScalarProperty Name="MemberWalletTransactionID" ColumnName="MemberWalletTransactionID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Points">
+            <EntityTypeMapping TypeName="Models.Point">
+              <MappingFragment StoreEntitySet="Points">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="PointType" ColumnName="PointType" />
+                <ScalarProperty Name="PointName" ColumnName="PointName" />
+                <ScalarProperty Name="PointID" ColumnName="PointID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reservations">
+            <EntityTypeMapping TypeName="Models.Reservation">
+              <MappingFragment StoreEntitySet="Reservations">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="TransactionTotal" ColumnName="TransactionTotal" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="DateAssigned" ColumnName="DateAssigned" />
+                <ScalarProperty Name="DateConfirmed" ColumnName="DateConfirmed" />
+                <ScalarProperty Name="EmployeeIDAssigned" ColumnName="EmployeeIDAssigned" />
+                <ScalarProperty Name="EmployeeIDConfirmed" ColumnName="EmployeeIDConfirmed" />
+                <ScalarProperty Name="EmployeeIDCreated" ColumnName="EmployeeIDCreated" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+                <ScalarProperty Name="NumberOfCustomer" ColumnName="NumberOfCustomer" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="ReservationStatus" ColumnName="ReservationStatus" />
+                <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="Models.Store">
+              <MappingFragment StoreEntitySet="Stores">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wallets">
+            <EntityTypeMapping TypeName="Models.Wallet">
+              <MappingFragment StoreEntitySet="Wallets">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ReferenceCode" ColumnName="ReferenceCode" />
+                <ScalarProperty Name="WalletType" ColumnName="WalletType" />
+                <ScalarProperty Name="WalletName" ColumnName="WalletName" />
+                <ScalarProperty Name="WalletID" ColumnName="WalletID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

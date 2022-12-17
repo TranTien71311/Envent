@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Models.Store" Provider="iAnywhere.Data.SQLAnywhere" ProviderManifestToken="12" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="ClientModuleLinks">
+          <Key>
+            <PropertyRef Name="ClientModuleID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientModuleID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="ClientID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="ModuleID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="ClientID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="ClientName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ClientDb" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="ClientHost" Type="varchar" MaxLength="100" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Modules">
+          <Key>
+            <PropertyRef Name="ModuleID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModuleID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="ModuleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PartnerClientLinks">
+          <Key>
+            <PropertyRef Name="PartnerClientID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PartnerClientID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="PartnerID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="ClientID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Partners">
+          <Key>
+            <PropertyRef Name="PartnerID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PartnerID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="PartnerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SecretKey" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="char" MaxLength="36" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="F1" Type="nvarchar" MaxLength="255" />
+          <Property Name="F2" Type="nvarchar" MaxLength="255" />
+          <Property Name="F3" Type="nvarchar" MaxLength="255" />
+          <Property Name="F4" Type="nvarchar" MaxLength="255" />
+          <Property Name="F5" Type="nvarchar" MaxLength="255" />
+          <Property Name="F6" Type="nvarchar" MaxLength="255" />
+          <Property Name="F7" Type="nvarchar" MaxLength="255" />
+          <Property Name="F8" Type="nvarchar" MaxLength="255" />
+          <Property Name="F9" Type="nvarchar" MaxLength="255" />
+          <Property Name="F10" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ModelsStoreContainer">
+          <EntitySet Name="ClientModuleLinks" EntityType="Self.ClientModuleLinks" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="Modules" EntityType="Self.Modules" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="PartnerClientLinks" EntityType="Self.PartnerClientLinks" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="Partners" EntityType="Self.Partners" Schema="DBA" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="DBA" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Models" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SpeedCoreDbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clients" EntityType="Models.Client" />
+          <EntitySet Name="Modules" EntityType="Models.Module" />
+          <EntitySet Name="PartnerClientLinks" EntityType="Models.PartnerClientLink" />
+          <EntitySet Name="Partners" EntityType="Models.Partner" />
+          <EntitySet Name="Users" EntityType="Models.User" />
+        </EntityContainer>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="ClientID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="ClientName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClientDb" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="ClientHost" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Module">
+          <Key>
+            <PropertyRef Name="ModuleID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModuleID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="ModuleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PartnerClientLink">
+          <Key>
+            <PropertyRef Name="PartnerClientID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PartnerClientID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="PartnerID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="ClientID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Partner">
+          <Key>
+            <PropertyRef Name="PartnerID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PartnerID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="PartnerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SecretKey" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="36" FixedLength="true" Unicode="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" />
+          <Property Name="F1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F4" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F5" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F6" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F7" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F8" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F9" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="F10" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="SpeedCoreDbContext">
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="Models.Client">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="ClientHost" ColumnName="ClientHost" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ClientDb" ColumnName="ClientDb" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modules">
+            <EntityTypeMapping TypeName="Models.Module">
+              <MappingFragment StoreEntitySet="Modules">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ModuleName" ColumnName="ModuleName" />
+                <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PartnerClientLinks">
+            <EntityTypeMapping TypeName="Models.PartnerClientLink">
+              <MappingFragment StoreEntitySet="PartnerClientLinks">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="PartnerID" ColumnName="PartnerID" />
+                <ScalarProperty Name="PartnerClientID" ColumnName="PartnerClientID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partners">
+            <EntityTypeMapping TypeName="Models.Partner">
+              <MappingFragment StoreEntitySet="Partners">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="SecretKey" ColumnName="SecretKey" />
+                <ScalarProperty Name="PartnerName" ColumnName="PartnerName" />
+                <ScalarProperty Name="PartnerID" ColumnName="PartnerID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Models.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="F10" ColumnName="F10" />
+                <ScalarProperty Name="F9" ColumnName="F9" />
+                <ScalarProperty Name="F8" ColumnName="F8" />
+                <ScalarProperty Name="F7" ColumnName="F7" />
+                <ScalarProperty Name="F6" ColumnName="F6" />
+                <ScalarProperty Name="F5" ColumnName="F5" />
+                <ScalarProperty Name="F4" ColumnName="F4" />
+                <ScalarProperty Name="F3" ColumnName="F3" />
+                <ScalarProperty Name="F2" ColumnName="F2" />
+                <ScalarProperty Name="F1" ColumnName="F1" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

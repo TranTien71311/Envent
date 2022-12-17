@@ -1,0 +1,58 @@
+﻿body {
+    padding: 0px;
+    margin: 0px;
+}
+
+.item td {
+    margin: 10px 0px;
+    padding: 4px;
+    text-align: justify;
+}
+
+#qrCode {
+    width: 80px;
+    margin-bottom: 10px;
+    margin: 0px auto;
+}
+
+#ticketTable tr td {
+    font-size: 15px;
+}
+
+#printt {
+    width: fit-content;
+}
+
+#companyName {
+    font-size: 13px;
+    text-align: center;
+}
+
+.total {
+    font-weight: 600;
+}
+
+.qrLayout {
+    text-align: center;
+}
+
+.printSession {
+    padding: 0px 20px;
+}
+
+#totalspan {
+    font-weight: 700;
+}
+
+#btn-modalCloseTicket, #btn-modalPrint {
+    display: none;
+}
+#searchLink, #searchKey {
+    word-break: break-all;
+}
+
+    #qrCode {
+        margin-top: 10px;
+        width: 60px;
+        height: 60px;
+    }

@@ -1,0 +1,161 @@
+﻿@{
+    ViewBag.Title = "index";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="~/Areas/ReportViewer/Assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Areas/ReportViewer/Assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Areas/ReportViewer/Assets/css/form-elements.css">
+    <link rel="stylesheet" href="~/Areas/ReportViewer/Assets/css/style.css">
+    <script src="~/Areas/ReportViewer/Assets/js/jquery-1.11.1.min.js"></script>
+    <script src="~/Areas/ReportViewer/Assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Areas/ReportViewer/Assets/js/jquery.backstretch.min.js"></script>
+    <script src="~/Areas/ReportViewer/Assets/js/retina-1.1.0.min.js"></script>
+    <script src="~/Areas/ReportViewer/Assets/js/sweetalert2.js"></script>
+    <script src="~/Areas/ReportViewer/Assets/js/md5.js"></script>
+    <!-- Javascript -->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="top-content">
+        <div class="inner-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3>LOGIN VERSION 1.5</h3>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-key"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom contact-form">
+                            <div class="form-group">
+                                <label class="sr-only">Username</label>
+                                <input type="text" name="Username" placeholder="Username..." class="form-control" id="username">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">Password</label>
+                                <input type="password" name="Password" placeholder="Password..." class="form-control" id="password">
+                            </div>
+                            <div align="center">
+                                <button type="button" id="btnLogin" name="sign in" class="btn">Sign In</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    $('#btnLogin').click(function () {
+        let username = $('#username').val();
+        let password = $('#password').val();
+
+        if (username == "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'User Name can not be empty',
+                showConfirmButton: false,
+                timer: 3500
+            });
+            return;
+        }
+
+        if (password == "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'User Name can not be empty',
+                showConfirmButton: false,
+                timer: 3500
+            });
+            return;
+        }
+
+        getLogin(username, password);
+    });
+
+    function getLogin(_username,_password) {
+        $.ajax({
+            url: '/api/ReportViewerLogin?UserName=' + _username + '&Password=' + md5(_password) + '',
+            type: 'GET',
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                'ClientGUID': '9326530020cc4524a69b99db2a87ddaf',
+            },
+            success: function (_Result) {
+                if (_Result.Status == 200) {
+                    if (_Result.Data.length != 0) {
+                        let data = JSON.stringify(_Result.Data[0]);
+                        loadOverview(data);
+                    }
+                    else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'User Name or Password is incorrect',
+                            showConfirmButton: false,
+                            timer: 3500
+                        });
+                    }
+                }
+                else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: _Result.Description.en,
+                        showConfirmButton: false,
+                        timer: 3500
+                    });
+                }
+            }
+        });
+    };
+    function loadOverview(_data) {
+        $.ajax({
+            url: '/ReportViewer/Login/Login?Body=' + _data+'',
+            type: 'GET',
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            success: function (_Result) {
+                console.log("hbssdshsdgsfdgv");
+                if (_Result.Status == 200) {
+                    window.location.assign('/ReportViewer/Overview');
+                }
+                else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: _Result.Description.en,
+                        showConfirmButton: false,
+                        timer: 3500
+                    });
+                }
+            }
+        });
+
+    }
+</script>
+
+
+
+

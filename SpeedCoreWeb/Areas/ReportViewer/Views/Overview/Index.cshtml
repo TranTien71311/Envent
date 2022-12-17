@@ -1,0 +1,313 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Overview</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Areas/ReportViewer/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="~/Areas/ReportViewer/css/sb-admin1.4.5.css" rel="stylesheet">
+    <link href="~/Areas/ReportViewer/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <!-- Morris Charts CSS -->
+    <link href="~/Areas/ReportViewer/css/plugins/morris.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="~/Areas/ReportViewer/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="~/Areas/ReportViewer/js/circles.js"></script>
+    <script src="~/Areas/ReportViewer/js/nanobar.js"></script>
+    <!-- jQuery -->
+    <script src="~/Areas/ReportViewer/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/Areas/ReportViewer/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Areas/ReportViewer/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="~/Areas/ReportViewer/js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+    <!-- Morris Charts JavaScript -->
+    <script src="~/Areas/ReportViewer/js/plugins/morris/raphael.min.js"></script>
+    <script src="~/Areas/ReportViewer/js/plugins/morris/morris.min.js"></script>
+    <script src="~/Areas/ReportViewer/js/Overview1.4.6.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <form id="Form1" runat="server">
+        <div id="wrapper">
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Overview.aspx"><img src="~/Areas/ReportViewer/Assets/images/logo.png" alt="Profile-img"/></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sales <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="active">
+                                    <a href="Overview.aspx">Overview</a>
+                                </li>
+                                <li>
+                                    <a href="DailySales.aspx">Daily Sales</a>
+                                </li>
+                                <li>
+                                    <a href="SalesDrilldown.aspx">Sales Drilldown</a>
+                                </li>
+                                <li>
+                                    <a href="WeeklySales.aspx">Weekly Sales</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reports <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="ExtractReports.aspx">Extract Reports</a>
+                                </li>
+                                <li>
+                                    <a href="CustomizeReports.aspx">Customize Reports</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Marketing <b class="caret"></b></a>
+                           <ul class="dropdown-menu">
+                              <li>
+                                 <a href="LoyaltyDashboard.aspx">Loyalty Dashboard</a>
+                              </li>
+                           </ul>
+                        </li-->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href='ChangePassword.aspx'>Change Password</a></li>;
+
+                                <li>
+                                    <a href="Guide.aspx" target="_blank">Guide</a>
+                                </li>
+                                <li>
+                                    <a href="Logout.aspx">Log Out</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+            <div id="page-wrapper">
+                <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <div class="row row-first">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><i class="fa fa-filter"></i> Overview - <span id="store_name"></span></h3>
+                                    <div class="circle" id="circlesloading"></div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="navbar-form navbar-center" align="center">
+                                        <div class="form-group">
+                                            <asp:DropDownList ID="lstStore" CssClass="form-control" runat="server"></asp:DropDownList>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group date form_date" data-date="" data-date-format="mm/dd/yyyy" data-link-field="dtp_input2" data-link-format="mm/dd/yyyy">
+                                                <asp:TextBox ID="txtDate" runat="server" ReadOnly="true" CssClass="form-control"></asp:TextBox>
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <i class="fa fa-clock-o"></i> Sales for <b id="date"></b>
+                                        <select id="OptionTransStatus">
+                                            <option value="0">show closed</option>
+                                            <option value="1">show open</option>
+                                        </select>
+                                    </h3>
+                                    <i class="spin-loader fa fa-cog fa-spin spin-loader-black fa-2x" id="LoadingSalesfor" style="display:none;"></i>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="ShowOpen" style="display:none;">
+                                        <div class="col-md-4 col-sm-4 col-xs-12" title="Daily net sales value">
+                                            <div class="text-center">Net sales</div>
+                                            <div class="text-center border-s">
+                                                <h1 id="TotalNetSalesOpen">0</h1>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12" title="Daily transaction counts">
+                                            <div class="text-center">Transaction</div>
+                                            <div class="text-center border-s">
+                                                <h1 id="TransactionsOpen">0</h1>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-12" title="Daily customer counts">
+                                            <div class="text-center">Customer</div>
+                                            <div class="text-center border-s">
+                                                <h1 id="CustomersOpen">0</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ShowClosed">
+                                        <div class="col-md-3 col-sm-6 col-xs-12" title="Daily net sales value, compared to the same day in the previous week">
+                                            <div class="text-center">Net sales</div>
+                                            <div class="text-center">
+                                                <h1 id="TotalNetSales">0</h1>
+                                            </div>
+                                            <div class="text-center"><i id="CompareNetSales" class="compare-icon fa fa-3x fa-arrow-up text-success"></i></div>
+                                            <div class="text-center text-muted">Last <span class="daytext"></span></div>
+                                            <div class="text-center text-muted border-s" id="SalesPreviousWeekly">0</div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-12" title="Daily transaction counts, compared to the same day in the previous week">
+                                            <div class="text-center">Transaction</div>
+                                            <div class="text-center">
+                                                <h1 id="Transactions">0</h1>
+                                            </div>
+                                            <div class="text-center"><i id="CompareTransaction" class="compare-icon fa fa-3x fa-arrow-up text-success"></i></div>
+                                            <div class="text-center text-muted">Last <span class="daytext"></span></div>
+                                            <div class="text-center text-muted border-s" id="TransactionsPreviousWeekly">0</div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-12" title="Daily customer counts, compared to the same day in the previous week">
+                                            <div class="text-center">Customer</div>
+                                            <div class="text-center">
+                                                <h1 id="Customers">0</h1>
+                                            </div>
+                                            <div class="text-center"><i id="CompareCustomer" class="compare-icon fa fa-3x fa-arrow-up text-success"></i></div>
+                                            <div class="text-center text-muted">Last <span class="daytext"></span></div>
+                                            <div class="text-center text-muted border-s" id="CustomersPreviousWeekly">0</div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-xs-12" title="Total net sales value for the week to date, starting from the week start day (monday), compared to the same point in time for the previous week">
+                                            <div class="text-center">Week to date</div>
+                                            <div class="text-center">
+                                                <h1 id="WeekToDate">0</h1>
+                                            </div>
+                                            <div class="text-center"><i id="CompareWeekToDate" class="compare-icon fa fa-3x fa-arrow-up text-success"></i></div>
+                                            <div class="text-center text-muted">Week to last <span class="daytext"></span></div>
+                                            <div class="text-center text-muted border-s" id="WeekToLast">0</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                    <div class="row" id="SalesByStore" style="display:none;">
+                    </div>
+                    <!-- /.row -->
+                    <div class="row" id="Top5ANDSummaryChart">
+                        <div class="col-md-6 col-sm-6 col-xs-12" title="Top selling PLUs by Net sales value after discounts">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <i class="fa fa-long-arrow-right"></i> Top 5 PLUs
+                                        <select id="OptionTop5PLUs">
+                                            <option value="0">sales value</option>
+                                            <option value="1">sales quantity</option>
+                                        </select>
+                                    </h3>
+                                    <i class="spin-loader fa fa-cog fa-spin spin-loader-black fa-2x" id="LoadingTop5PLUs" style="display:none;"></i>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="flot-chart">
+                                        <div class="flot-chart-content" id="morris-bar-chart"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12" title="Net sales split by Group. Each Group's sales value is displayed as a percentage of the selected day's current Net Sales total">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <i class="fa fa-long-arrow-right"></i> Daily summary group analysis
+                                        <select id="OptionSummary">
+                                            <option value="0">sales value</option>
+                                            <option value="1">sales quantity</option>
+                                        </select>
+                                    </h3>
+                                    <i class="spin-loader fa fa-cog fa-spin spin-loader-black fa-2x" id="LoadingDailySummary" style="display:none;"></i>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="flot-chart">
+                                        <div class="flot-chart-content" id="morris-donut-chart" style="height: 80%;"></div>
+                                        <div id="legend" class="donut-legend" style="height: 20%;" align="center"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                    <div class="row" id="30DaysNetSales">
+                        <div class="col-md-12 col-sm-12 col-xs-12" title="Daily Net sales totals for 30 days up to the date selected">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <i class="fa fa-bar-chart-o"></i> 30 days net sales
+                                        <select id="Option30Days">
+                                            <option value="0">net sales</option>
+                                            <option value="1">gross sales</option>
+                                            <option value="2">transactions</option>
+                                            <option value="3">customers</option>
+                                        </select>
+                                    </h3>
+                                    <i class="spin-loader fa fa-cog fa-spin spin-loader-black fa-2x" id="Loading30Days" style="display:none;"></i>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="flot-chart-content" id="morris-line-chart-month"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                    <div class="row" id="YearOnYear">
+                        <div class="col-md-12 col-sm-12 col-xs-12" title="Weekly Net sales totals for the year up to the selected date, compared to the previous year">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Year on year</h3>
+                                    <i class="spin-loader fa fa-cog fa-spin spin-loader-black fa-2x" id="LoadingYearOnYear" style="display:none;"></i>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="morris-year-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+                    <footer>
+                        <div>
+                            <p class="pull-left">Count down: <b id="maxcountdown">0</b>/<b id="requestcountdown">0</b></p>
+                            <p class="pull-right" style="font-weight: bold;" id="UpdateLast">Copyright © Speed Report Online 2016</p>
+                        </div>
+                    </footer>
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /#page-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+    </form>
+
+</body>
+</html>

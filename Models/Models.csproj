@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F48661EF-774B-40DD-8036-853908209D24}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Framework\AIBoxCamera.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\AIBoxHistory.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\AIBoxServer.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Campaign.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\CampaignCode.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\CampaignCodeTransaction.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\CampaignGroup.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\CampaignMemberGroupLink.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\CampaignStoreLink.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Client.cs">
+      <DependentUpon>SpeedCoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Employee.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\EmployeeFunctionLink.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\EmployeeGroup.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\EmployeeStoreLink.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Function.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Member.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\MemberAIBoxLink.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\MemberCode.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\MemberDelivery.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\MemberGroup.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\MemberPointLink.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\MemberPointTransaction.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\MemberWalletLink.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\MemberWalletTransaction.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Module.cs">
+      <DependentUpon>SpeedCoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Partner.cs">
+      <DependentUpon>SpeedCoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\PartnerClientLink.cs">
+      <DependentUpon>SpeedCoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Point.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Reservation.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\SpeedClientDbContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpeedClientDbContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\SpeedClientDbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\SpeedClientDbContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpeedClientDbContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\SpeedCoreDbContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpeedCoreDbContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\SpeedCoreDbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpeedCoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\SpeedCoreDbContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpeedCoreDbContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Store.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\User.cs">
+      <DependentUpon>SpeedCoreDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Framework\Wallet.cs">
+      <DependentUpon>SpeedClientDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PartnerModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Framework\SpeedCoreDbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SpeedCoreDbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Framework\SpeedClientDbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SpeedClientDbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Framework\SpeedClientDbContext.edmx.diagram">
+      <DependentUpon>SpeedClientDbContext.edmx</DependentUpon>
+    </None>
+    <None Include="Framework\SpeedCoreDbContext.edmx.diagram">
+      <DependentUpon>SpeedCoreDbContext.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\SpeedClientDbContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SpeedClientDbContext.edmx</DependentUpon>
+      <LastGenOutput>SpeedClientDbContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Framework\SpeedClientDbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SpeedClientDbContext.edmx</DependentUpon>
+      <LastGenOutput>SpeedClientDbContext.cs</LastGenOutput>
+    </Content>
+    <Content Include="Framework\SpeedCoreDbContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SpeedCoreDbContext.edmx</DependentUpon>
+      <LastGenOutput>SpeedCoreDbContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Framework\SpeedCoreDbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SpeedCoreDbContext.edmx</DependentUpon>
+      <LastGenOutput>SpeedCoreDbContext.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

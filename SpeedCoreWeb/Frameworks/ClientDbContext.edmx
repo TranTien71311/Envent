@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ClientDbContext.Store" Alias="Self" Provider="iAnywhere.Data.SQLAnywhere" ProviderManifestToken="12" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ClientDbContextStoreContainer">
+          <EntitySet Name="Company" EntityType="ClientDbContext.Store.Company" store:Type="Tables" Schema="DBA" />
+          <EntitySet Name="Member" EntityType="ClientDbContext.Store.Member" store:Type="Tables" Schema="DBA" />
+          <EntitySet Name="Sector" EntityType="ClientDbContext.Store.Sector" store:Type="Tables" Schema="DBA" />
+        </EntityContainer>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CompayName" Type="nvarchar" MaxLength="200" />
+          <Property Name="SectorID" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Title" Type="nchar" MaxLength="100" />
+          <Property Name="IsConfirm" Type="bit" />
+          <Property Name="CompanyID" Type="int" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="Table" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sector">
+          <Key>
+            <PropertyRef Name="SectorID" />
+          </Key>
+          <Property Name="SectorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SectorName" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClientDbContext" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Companies" EntityType="ClientDbContext.Company" />
+          <EntitySet Name="Members" EntityType="ClientDbContext.Member" />
+          <EntitySet Name="Sectors" EntityType="ClientDbContext.Sector" />
+        </EntityContainer>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CompayName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="SectorID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="MemberID" />
+          </Key>
+          <Property Name="MemberID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Title" Type="String" MaxLength="100" Unicode="true" FixedLength="true" />
+          <Property Name="IsConfirm" Type="Boolean" />
+          <Property Name="CompanyID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Type="String" Name="Table" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Sector">
+          <Key>
+            <PropertyRef Name="SectorID" />
+          </Key>
+          <Property Name="SectorID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="SectorName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClientDbContextStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="ClientDbContext.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompayName" ColumnName="CompayName" />
+                <ScalarProperty Name="SectorID" ColumnName="SectorID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="ClientDbContext.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="Table" ColumnName="Table" />
+                <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="IsConfirm" ColumnName="IsConfirm" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sectors">
+            <EntityTypeMapping TypeName="ClientDbContext.Sector">
+              <MappingFragment StoreEntitySet="Sector">
+                <ScalarProperty Name="SectorID" ColumnName="SectorID" />
+                <ScalarProperty Name="SectorName" ColumnName="SectorName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
